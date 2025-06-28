@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "weather-dashboard"
+        DOCKERHUB_USERNAME = "your_dockerhub_username"
+    }
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/your-username/weather-dashboard.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("${IMAGE_NAME}")
+                }
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                script {
+                    docker.image("${IMAGE_NAME}").run('-d -p 3000:3000')
+                }
+            }
+        }
+    }
+}

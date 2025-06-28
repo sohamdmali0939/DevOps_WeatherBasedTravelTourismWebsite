@@ -1,0 +1,117 @@
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops (main)
+$ git clone https://github.com/sohamdmali0939/Devops.git
+Cloning into 'Devops'...
+warning: You appear to have cloned an empty repository.
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops (main)
+$ cd repo1
+bash: cd: repo1: No such file or directory
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops (main)
+$ mkdir repo1
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops (main)
+$ cd repo1
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ echo "Hello, GitHub!" > hello.txt
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git add hello.txt
+warning: in the working copy of 'repo1/hello.txt', LF will be replaced by CRLF the next time Git touches it
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git commit -m "Added hello.txt"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Soham@DESKTOP-MAVHBII.(none)')
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ ^C
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git config --global user.name "Soham"
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git config --global user.email "sohamdmali2004@gmail.com"
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git commit -m "Added hello.txt"
+[main (root-commit) ede8895] Added hello.txt
+ 2 files changed, 2 insertions(+)
+ create mode 100644 hello.txt
+ create mode 100644 repo1/hello.txt
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git branch
+* main
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git push origin master:main
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/sohamdmali0939/Devops.git'
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 326 bytes | 326.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/sohamdmali0939/Devops.git
+ * [new branch]      main -> main
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ ls
+hello.txt
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ cat hello.txt
+Hello, GitHub!
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git pull origin master
+fatal: couldn't find remote ref master
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git pull origin main
+From https://github.com/sohamdmali0939/Devops
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ ls
+hello.txt
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git branch
+* main
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ git pull origin main
+From https://github.com/sohamdmali0939/Devops
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ ls
+hello.txt
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ cat hello.txt
+Hello, GitHub!
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Devops/repo1 (main)
+$ ^C
+

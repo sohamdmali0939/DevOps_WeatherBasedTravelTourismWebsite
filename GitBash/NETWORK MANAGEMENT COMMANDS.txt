@@ -1,0 +1,380 @@
+NETWORK MANAGEMENT COMMANDS
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Soham> cd "C:\Users\Soham\Documents\DevOps(Sem6)"
+PS C:\Users\Soham\Documents\DevOps(Sem6)> ssh -i soham2004.pem ec2-user@13.235.74.221
+The authenticity of host '13.235.74.221 (13.235.74.221)' can't be established.
+ED25519 key fingerprint is SHA256:unYYHntm4bO+tm0S6O0d3jZiZh9jmp5cG0Isnv8w6UI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.235.74.221' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-12-174 ~]$ ls
+[ec2-user@ip-172-31-12-174 ~]$ ipconfig
+-bash: ipconfig: command not found
+[ec2-user@ip-172-31-12-174 ~]$ ifconfig
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.12.174  netmask 255.255.240.0  broadcast 172.31.15.255
+        inet6 fe80::84d:eeff:feaa:e183  prefixlen 64  scopeid 0x20<link>
+        ether 0a:4d:ee:aa:e1:83  txqueuelen 1000  (Ethernet)
+        RX packets 5515  bytes 38328035 (36.5 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1649  bytes 158029 (154.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 1020 (1020.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1020 (1020.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[ec2-user@ip-172-31-12-174 ~]$
+[ec2-user@ip-172-31-12-174 ~]$
+[ec2-user@ip-172-31-12-174 ~]$
+[ec2-user@ip-172-31-12-174 ~]$ ip
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { address | addrlabel | fou | help | ila | ioam | l2tp | link |
+                   macsec | maddress | monitor | mptcp | mroute | mrule |
+                   neighbor | neighbour | netconf | netns | nexthop | ntable |
+                   ntbl | route | rule | sr | stats | tap | tcpmetrics |
+                   token | tunnel | tuntap | vrf | xfrm }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -echo | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+[ec2-user@ip-172-31-12-174 ~]$ traceroute
+Usage:
+  traceroute [ -46dFITnreAUDV ] [ -f first_ttl ] [ -g gate,... ] [ -i device ] [ -m max_ttl ] [ -N squeries ] [ -p port ] [ -t tos ] [ -l flow_label ] [ -w MAX,HERE,NEAR ] [ -q nqueries ] [ -s src_addr ] [ -z sendwait ] [ --fwmark=num ] host [ packetlen ]
+Options:
+  -4                          Use IPv4
+  -6                          Use IPv6
+  -d  --debug                 Enable socket level debugging
+  -F  --dont-fragment         Do not fragment packets
+  -f first_ttl  --first=first_ttl
+                              Start from the first_ttl hop (instead from 1)
+  -g gate,...  --gateway=gate,...
+                              Route packets through the specified gateway
+                              (maximum 8 for IPv4 and 127 for IPv6)
+  -I  --icmp                  Use ICMP ECHO for tracerouting
+  -T  --tcp                   Use TCP SYN for tracerouting (default port is 80)
+  -i device  --interface=device
+                              Specify a network interface to operate with
+  -m max_ttl  --max-hops=max_ttl
+                              Set the max number of hops (max TTL to be
+                              reached). Default is 30
+  -N squeries  --sim-queries=squeries
+                              Set the number of probes to be tried
+                              simultaneously (default is 16)
+  -n                          Do not resolve IP addresses to their domain names
+  -p port  --port=port        Set the destination port to use. It is either
+                              initial udp port value for "default" method
+                              (incremented by each probe, default is 33434), or
+                              initial seq for "icmp" (incremented as well,
+                              default from 1), or some constant destination
+                              port for other methods (with default of 80 for
+                              "tcp", 53 for "udp", etc.)
+  -t tos  --tos=tos           Set the TOS (IPv4 type of service) or TC (IPv6
+                              traffic class) value for outgoing packets
+  -l flow_label  --flowlabel=flow_label
+                              Use specified flow_label for IPv6 packets
+  -w MAX,HERE,NEAR  --wait=MAX,HERE,NEAR
+                              Wait for a probe no more than HERE (default 3)
+                              times longer than a response from the same hop,
+                              or no more than NEAR (default 10) times than some
+                              next hop, or MAX (default 5.0) seconds (float
+                              point values allowed too)
+  -q nqueries  --queries=nqueries
+                              Set the number of probes per each hop. Default is
+                              3
+  -r                          Bypass the normal routing and send directly to a
+                              host on an attached network
+  -s src_addr  --source=src_addr
+                              Use source src_addr for outgoing packets
+  -z sendwait  --sendwait=sendwait
+                              Minimal time interval between probes (default 0).
+                              If the value is more than 10, then it specifies a
+                              number in milliseconds, else it is a number of
+                              seconds (float point values allowed too)
+  -e  --extensions            Show ICMP extensions (if present), including MPLS
+  -A  --as-path-lookups       Perform AS path lookups in routing registries and
+                              print results directly after the corresponding
+                              addresses
+  -M name  --module=name      Use specified module (either builtin or external)
+                              for traceroute operations. Most methods have
+                              their shortcuts (`-I' means `-M icmp' etc.)
+  -O OPTS,...  --options=OPTS,...
+                              Use module-specific option OPTS for the
+                              traceroute module. Several OPTS allowed,
+                              separated by comma. If OPTS is "help", print info
+                              about available options
+  --sport=num                 Use source port num for outgoing packets. Implies
+                              `-N 1'
+  --fwmark=num                Set firewall mark for outgoing packets
+  -U  --udp                   Use UDP to particular port for tracerouting
+                              (instead of increasing the port per each probe),
+                              default port is 53
+  -UL                         Use UDPLITE for tracerouting (default dest port
+                              is 53)
+  -D  --dccp                  Use DCCP Request for tracerouting (default port
+                              is 33434)
+  -P prot  --protocol=prot    Use raw packet of protocol prot for tracerouting
+  --mtu                       Discover MTU along the path being traced. Implies
+                              `-F -N 1'
+  --back                      Guess the number of hops in the backward path and
+                              print if it differs
+  -V  --version               Print version info and exit
+  --help                      Read this help and exit
+
+Arguments:
++     host          The host to traceroute to
+      packetlen     The full packet length (default is the length of an IP
+                    header plus 40). Can be ignored or increased to a minimal
+                    allowed value
+[ec2-user@ip-172-31-12-174 ~]$ tracert
+-bash: tracert: command not found
+[ec2-user@ip-172-31-12-174 ~]$ traceroute
+Usage:
+  traceroute [ -46dFITnreAUDV ] [ -f first_ttl ] [ -g gate,... ] [ -i device ] [ -m max_ttl ] [ -N squeries ] [ -p port ] [ -t tos ] [ -l flow_label ] [ -w MAX,HERE,NEAR ] [ -q nqueries ] [ -s src_addr ] [ -z sendwait ] [ --fwmark=num ] host [ packetlen ]
+Options:
+  -4                          Use IPv4
+  -6                          Use IPv6
+  -d  --debug                 Enable socket level debugging
+  -F  --dont-fragment         Do not fragment packets
+  -f first_ttl  --first=first_ttl
+                              Start from the first_ttl hop (instead from 1)
+  -g gate,...  --gateway=gate,...
+                              Route packets through the specified gateway
+                              (maximum 8 for IPv4 and 127 for IPv6)
+  -I  --icmp                  Use ICMP ECHO for tracerouting
+  -T  --tcp                   Use TCP SYN for tracerouting (default port is 80)
+  -i device  --interface=device
+                              Specify a network interface to operate with
+  -m max_ttl  --max-hops=max_ttl
+                              Set the max number of hops (max TTL to be
+                              reached). Default is 30
+  -N squeries  --sim-queries=squeries
+                              Set the number of probes to be tried
+                              simultaneously (default is 16)
+  -n                          Do not resolve IP addresses to their domain names
+  -p port  --port=port        Set the destination port to use. It is either
+                              initial udp port value for "default" method
+                              (incremented by each probe, default is 33434), or
+                              initial seq for "icmp" (incremented as well,
+                              default from 1), or some constant destination
+                              port for other methods (with default of 80 for
+                              "tcp", 53 for "udp", etc.)
+  -t tos  --tos=tos           Set the TOS (IPv4 type of service) or TC (IPv6
+                              traffic class) value for outgoing packets
+  -l flow_label  --flowlabel=flow_label
+                              Use specified flow_label for IPv6 packets
+  -w MAX,HERE,NEAR  --wait=MAX,HERE,NEAR
+                              Wait for a probe no more than HERE (default 3)
+                              times longer than a response from the same hop,
+                              or no more than NEAR (default 10) times than some
+                              next hop, or MAX (default 5.0) seconds (float
+                              point values allowed too)
+  -q nqueries  --queries=nqueries
+                              Set the number of probes per each hop. Default is
+                              3
+  -r                          Bypass the normal routing and send directly to a
+                              host on an attached network
+  -s src_addr  --source=src_addr
+                              Use source src_addr for outgoing packets
+  -z sendwait  --sendwait=sendwait
+                              Minimal time interval between probes (default 0).
+                              If the value is more than 10, then it specifies a
+                              number in milliseconds, else it is a number of
+                              seconds (float point values allowed too)
+  -e  --extensions            Show ICMP extensions (if present), including MPLS
+  -A  --as-path-lookups       Perform AS path lookups in routing registries and
+                              print results directly after the corresponding
+                              addresses
+  -M name  --module=name      Use specified module (either builtin or external)
+                              for traceroute operations. Most methods have
+                              their shortcuts (`-I' means `-M icmp' etc.)
+  -O OPTS,...  --options=OPTS,...
+                              Use module-specific option OPTS for the
+                              traceroute module. Several OPTS allowed,
+                              separated by comma. If OPTS is "help", print info
+                              about available options
+  --sport=num                 Use source port num for outgoing packets. Implies
+                              `-N 1'
+  --fwmark=num                Set firewall mark for outgoing packets
+  -U  --udp                   Use UDP to particular port for tracerouting
+                              (instead of increasing the port per each probe),
+                              default port is 53
+  -UL                         Use UDPLITE for tracerouting (default dest port
+                              is 53)
+  -D  --dccp                  Use DCCP Request for tracerouting (default port
+                              is 33434)
+  -P prot  --protocol=prot    Use raw packet of protocol prot for tracerouting
+  --mtu                       Discover MTU along the path being traced. Implies
+                              `-F -N 1'
+  --back                      Guess the number of hops in the backward path and
+                              print if it differs
+  -V  --version               Print version info and exit
+  --help                      Read this help and exit
+
+Arguments:
++     host          The host to traceroute to
+      packetlen     The full packet length (default is the length of an IP
+                    header plus 40). Can be ignored or increased to a minimal
+                    allowed value
+[ec2-user@ip-172-31-12-174 ~]$ tracepath
+
+Usage
+  tracepath [options] <destination>
+
+Options:
+  -4             use IPv4
+  -6             use IPv6
+  -b             print both name and ip
+  -l <length>    use packet <length>
+  -m <hops>      use maximum <hops>
+  -n             no dns name resolution
+  -p <port>      use destination <port>
+  -V             print version and exit
+  <destination>  dns name or ip address
+
+For more details see tracepath(8).
+[ec2-user@ip-172-31-12-174 ~]$ ping
+ping: usage error: Destination address required
+[ec2-user@ip-172-31-12-174 ~]$ ping instagram.com
+PING instagram.com (157.240.16.174) 56(84) bytes of data.
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=1 ttl=52 time=0.622 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=2 ttl=52 time=0.672 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=3 ttl=52 time=0.600 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=4 ttl=52 time=0.645 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=5 ttl=52 time=0.684 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=6 ttl=52 time=0.620 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=7 ttl=52 time=0.636 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=8 ttl=52 time=0.671 ms
+64 bytes from instagram-p42-shv-01-bom1.fbcdn.net (157.240.16.174): icmp_seq=9 ttl=52 time=0.674 ms
+^C
+--- instagram.com ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8012ms
+rtt min/avg/max/mdev = 0.600/0.647/0.684/0.027 ms
+[ec2-user@ip-172-31-12-174 ~]$ traceroute google.com
+traceroute to google.com (142.250.183.110), 30 hops max, 60 byte packets
+ 1  240.2.196.12 (240.2.196.12)  2.104 ms 240.2.196.13 (240.2.196.13)  1.155 ms 240.2.196.15 (240.2.196.15)  1.905 ms
+ 2  * * *
+ 3  * 99.82.178.53 (99.82.178.53)  1.763 ms *
+ 4  * * *
+ 5  142.250.208.148 (142.250.208.148)  2.201 ms 142.250.61.202 (142.250.61.202)  2.775 ms 142.250.238.198 (142.250.238.198)  1.966 ms
+ 6  72.14.239.247 (72.14.239.247)  1.951 ms  1.668 ms 72.14.233.59 (72.14.233.59)  1.130 ms
+ 7  192.178.110.111 (192.178.110.111)  2.869 ms 192.178.110.205 (192.178.110.205)  1.243 ms bom12s13-in-f14.1e100.net (142.250.183.110)  1.166 ms
+[ec2-user@ip-172-31-12-174 ~]$ ss
+Netid      State       Recv-Q       Send-Q                            Local Address:Port                     Peer Address:Port
+u_dgr      ESTAB       0            0                                             * 13377                               * 12551
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16120                               * 16094
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 18537                               * 18532
+u_dgr      ESTAB       0            0                                             * 13415                               * 12569
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16233                               * 16118
+u_str      ESTAB       0            0                                             * 18619                               * 18620
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16336                               * 16326
+u_dgr      ESTAB       0            0                                             * 16258                               * 12569
+u_str      ESTAB       0            0                                             * 16037                               * 16232
+u_str      ESTAB       0            0                                             * 16107                               * 16124
+u_dgr      ESTAB       0            0                           /run/systemd/notify 12551                               * 0
+u_dgr      ESTAB       0            0                                             * 18615                               * 18616
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16235                               * 16218
+u_str      ESTAB       0            0                                             * 18435                               * 18444
+u_dgr      ESTAB       0            0                  /run/systemd/journal/dev-log 12567                               * 0
+u_dgr      ESTAB       0            0                   /run/systemd/journal/socket 12569                               * 0
+u_str      ESTAB       0            0                                             * 16083                               * 16119
+u_dgr      ESTAB       0            0                                             * 18466                               * 12569
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16236                               * 16225
+u_str      ESTAB       0            0                                             * 17336                               * 17482
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16234                               * 16199
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 14510                               * 14501
+u_dgr      ESTAB       0            0                                             * 12552                               * 12553
+u_str      ESTAB       0            0                                             * 16273                               * 16274
+u_dgr      ESTAB       0            0                                             * 18459                               * 12569
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16119                               * 16083
+u_dgr      ESTAB       0            0                                             * 16277                               * 16278
+u_dgr      ESTAB       0            0                                             * 14563                               * 12567
+u_str      ESTAB       0            0                                             * 14573                               * 14572
+u_dgr      ESTAB       0            0                                             * 12553                               * 12552
+u_dgr      ESTAB       0            0                                             * 18468                               * 12569
+u_dgr      ESTAB       0            0                                             * 18664                               * 12567
+u_dgr      ESTAB       0            0                                             * 16280                               * 16279
+u_str      ESTAB       0            0                                             * 16199                               * 16234
+u_str      ESTAB       0            0                                             * 16053                               * 16072
+u_str      ESTAB       0            0                                             * 16326                               * 16336
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16072                               * 16053
+u_dgr      ESTAB       0            0                                             * 14357                               * 12569
+u_str      ESTAB       0            0                                             * 16118                               * 16233
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16232                               * 16037
+u_str      ESTAB       0            0                                             * 16157                               * 16166
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16124                               * 16107
+u_str      ESTAB       0            0                                             * 14501                               * 14510
+u_str      ESTAB       0            0                                             * 18669                               * 18670
+u_str      ESTAB       0            0                                             * 18236                               * 0
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 17482                               * 17336
+u_str      ESTAB       0            0                                             * 16221                               * 16220
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 18444                               * 18435
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16274                               * 16273
+u_dgr      ESTAB       0            0                                             * 17560                               * 12567
+u_dgr      ESTAB       0            0                                             * 16184                               * 12569
+u_str      ESTAB       0            0                                             * 16218                               * 16235
+u_dgr      ESTAB       0            0                                             * 16279                               * 16280
+u_str      ESTAB       0            0                                             * 18532                               * 18537
+u_str      ESTAB       0            0                                             * 16220                               * 16221
+u_dgr      ESTAB       0            0                                             * 16246                               * 12569
+u_str      ESTAB       0            0                                             * 17352                               * 17504
+u_dgr      ESTAB       0            0                                             * 18583                               * 12567
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 16288                               * 16287
+u_dgr      ESTAB       0            0                                             * 18598                               * 12569
+u_str      ESTAB       0            0                                             * 16094                               * 16120
+u_dgr      ESTAB       0            0                                             * 14395                               * 14394
+u_str      ESTAB       0            0                                             * 14304                               * 14322
+u_dgr      ESTAB       0            0                                             * 16278                               * 16277
+u_str      ESTAB       0            0                                             * 16104                               * 16123
+u_str      ESTAB       0            0                                             * 16287                               * 16288
+u_str      ESTAB       0            0                   /run/dbus/system_bus_socket 18620                               * 18619
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16123                               * 16104
+u_str      ESTAB       0            0                                             * 14572                               * 14573
+u_str      ESTAB       0            0                                             * 18670                               * 18669
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 17504                               * 17352
+u_dgr      ESTAB       0            0                                             * 16188                               * 12569
+u_dgr      ESTAB       0            0                                             * 18616                               * 18615
+u_str      ESTAB       0            0                                             * 16225                               * 16236
+u_dgr      ESTAB       0            0                                             * 14636                               * 12569
+u_dgr      ESTAB       0            0                                             * 16361                               * 12567
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 16166                               * 16157
+u_dgr      ESTAB       0            0                                             * 18467                               * 12569
+u_str      ESTAB       0            0                   /run/systemd/journal/stdout 14322                               * 14304
+u_dgr      ESTAB       0            0                                             * 14394                               * 14395
+icmp6      UNCONN      0            0                                        *%enX0:ipv6-icmp                           *:*
+tcp        ESTAB       0            52                                172.31.12.174:ssh                   103.139.157.226:62185
+[ec2-user@ip-172-31-12-174 ~]$ curl
+Broadcast message from root@localhost (Tue 2025-04-22 06:20:09 UTC):
+
+The system will power off now!
+
+Connection to 13.235.74.221 closed by remote host.
+Connection to 13.235.74.221 closed.
+PS C:\Users\Soham\Documents\DevOps(Sem6)>

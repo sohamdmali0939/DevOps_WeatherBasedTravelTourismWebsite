@@ -1,0 +1,135 @@
+DEVOPS LAB1 (24-3-25)--->>USER MANAGEMENT COMMANDS
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+PS C:\Users\Soham> cd Documents
+PS C:\Users\Soham\Documents> cd DevOps(Sem6)
+
+
+PS C:\Users\Soham\Documents> cd "C:\Users\Soham\Documents\DevOps(Sem6)"
+PS C:\Users\Soham\Documents\DevOps(Sem6)> ssh -i soham2004.pem ec2-user@3.111.39.64    #This command should be given to activate your instance
+Last login: Tue Mar 11 06:51:02 2025 from 103.139.157.226
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2026-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-172-31-1-174 ~]$ pwd                         #pwd stands for path with directory
+/home/ec2-user
+[ec2-user@ip-172-31-1-174 ~]$ ls                          #ls command shows all the directories present
+[ec2-user@ip-172-31-1-174 ~]$ mkdir DevOps24              #mkdir will create new directory
+[ec2-user@ip-172-31-1-174 ~]$
+[ec2-user@ip-172-31-1-174 ~]$ ls
+DevOps24
+[ec2-user@ip-172-31-1-174 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-1-174 ~]$ cd DevOps24		#This will enter in that particular directory 
+[ec2-user@ip-172-31-1-174 DevOps24]$ ped
+-bash: ped: command not found
+[ec2-user@ip-172-31-1-174 DevOps24]$ pwd
+/home/ec2-user/DevOps24
+[ec2-user@ip-172-31-1-174 DevOps24]$ mkdir folder1 folder2		
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+folder1  folder2
+[ec2-user@ip-172-31-1-174 DevOps24]$ rm folder1           #rm command will help to remove files only and not directory but we are trying to remove directory
+rm: cannot remove ‘folder1’: Is a directory
+[ec2-user@ip-172-31-1-174 DevOps24]$ rm -r folder1        #rm -r this will remove directory.
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+folder2
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -ltr               #This will sort files by modification time
+total 0
+drwxrwxr-x 2 ec2-user ec2-user 6 Mar 24 03:19 folder2        #This will display the access (r-read; w-write; x-execute)(rwx(user);rwx(group);r-x(others))
+[ec2-user@ip-172-31-1-174 DevOps24]$ touch f1 f2 f3        
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+f1  f2  f3  folder2
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -1                #This will display all the files in different rows.
+f1
+f2
+f3
+folder2
+[ec2-user@ip-172-31-1-174 DevOps24]$ rm f1 f2 f3             #This will remove the files
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+folder2
+[ec2-user@ip-172-31-1-174 DevOps24]$ mv folder2 folder       #This will help in renaming the folder (Eg: This will rename from folder2 to folder)
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+folder
+[ec2-user@ip-172-31-1-174 ~]$ ls -ltr                           #This will sort files by their modification time
+total 0
+drwxrwxr-x 3 ec2-user ec2-user 20 Mar 24 03:27 DevOps24
+-rw-rw-r-- 1 ec2-user ec2-user  0 Mar 24 03:43 f3
+-rw-rw-r-- 1 ec2-user ec2-user  0 Mar 24 03:43 f2
+-rw-rw-r-- 1 ec2-user ec2-user  0 Mar 24 03:43 f1
+
+[ec2-user@ip-172-31-1-174 DevOps24]$ printf "data" > file2        #This is to enter content in file 2
+[ec2-user@ip-172-31-1-174 DevOps24]$ cat file2
+data[ec2-user@ip-172-31-1-174 DevOps24]$
+
+
+[ec2-user@ip-172-31-1-174 DevOps24]$ printf "data2            #This like Cut paste. Eg: It will cut "data" and write "data2" in file2
+> " > file2
+[ec2-user@ip-172-31-1-174 DevOps24]$ cat file2
+data2
+
+[ec2-user@ip-172-31-1-174 DevOps24]$ printf "Sumeet Kamble is a good boy" > file2
+[ec2-user@ip-172-31-1-174 DevOps24]$ cat file2
+Sumeet Kamble is a good boy[ec2-user@ip-172-31-1-174 DevOps24]$ tail -n 3 file2  	#This will display last 3 sentences
+Sumeet Kamble is a good boy[ec2-user@ip-172-31-1-174 DevOps24]$ head -n 3 file2  	#Thiswill display first 3 sentences
+Sumeet Kamble is a good boy[ec2-user@ip-172-31-1-174 DevOps24]$
+[ec2-user@ip-172-31-1-174 DevOps24]$
+[ec2-user@ip-172-31-1-174 DevOps24]$ printf "and a good coder" > file1 			#Entering content in file1
+[ec2-user@ip-172-31-1-174 DevOps24]$ cat file1
+and a good coder[ec2-user@ip-172-31-1-174 DevOps24]$ cat file1 file2  > file3           #This will concatenate the content of file1 and file2
+[ec2-user@ip-172-31-1-174 DevOps24]$ cat file3                                          #This will print the Concatenated content from file3
+and a good coderSumeet Kamble is a good boy[ec2-user@ip-172-31-1-174 DevOps24]$
+[ec2-user@ip-172-31-1-174 DevOps24]$
+
+
+NOTE: cd ..           #This will help to come out of present directory
+
+
+----------------------------------------------------------->FILE MANAGEMENT COMMANDS
+
+
+[ec2-user@ip-172-31-1-174 ~]$ ls
+DevOps24
+[ec2-user@ip-172-31-1-174 ~]$ cd DevOps24
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls
+file1  file2  file3  folder
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -ltr                       #This will sort the files and display the Permissions
+total 12
+drwxrwxr-x 2 ec2-user ec2-user  6 Mar 24 03:19 folder
+-rw-rw-r-- 1 ec2-user ec2-user 27 Mar 24 04:07 file2
+-rw-rw-r-- 1 ec2-user ec2-user 16 Mar 24 04:10 file1
+-rw-rw-r-- 1 ec2-user ec2-user 43 Mar 24 04:10 file3
+[ec2-user@ip-172-31-1-174 DevOps24]$ chmod u+rwx file1             #This will grant all the user permissions on file1             
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -ltr			    # "+" denotes giving permission
+total 12
+drwxrwxr-x 2 ec2-user ec2-user  6 Mar 24 03:19 folder
+-rw-rw-r-- 1 ec2-user ec2-user 27 Mar 24 04:07 file2
+-rwxrw-r-- 1 ec2-user ec2-user 16 Mar 24 04:10 file1               #Here we can see that all the user permissions are granted for file1
+-rw-rw-r-- 1 ec2-user ec2-user 43 Mar 24 04:10 file3
+[ec2-user@ip-172-31-1-174 DevOps24]$ chmod a+rwx file2             #This will grant al the permissions to file2
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls-ltr
+-bash: ls-ltr: command not found
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -ltr
+total 12
+drwxrwxr-x 2 ec2-user ec2-user  6 Mar 24 03:19 folder
+-rwxrwxrwx 1 ec2-user ec2-user 27 Mar 24 04:07 file2               #Here we ccan see that all the permissions have been granted to file2
+-rwxrw-r-- 1 ec2-user ec2-user 16 Mar 24 04:10 file1
+-rw-rw-r-- 1 ec2-user ec2-user 43 Mar 24 04:10 file3
+[ec2-user@ip-172-31-1-174 DevOps24]$
+
+
+[ec2-user@ip-172-31-1-174 DevOps24]$ chmod u-x file2              # Here we are revoking the user permissions
+[ec2-user@ip-172-31-1-174 DevOps24]$ ls -ltr			  #"-" denotes revoking permissions
+total 12
+drwxrwxr-x 2 ec2-user ec2-user  6 Mar 24 03:19 folder
+-rw-rwxrwx 1 ec2-user ec2-user 27 Mar 24 04:07 file2		   #here we can see that the permissions have been revoked
+-rwxrw-r-- 1 ec2-user ec2-user 16 Mar 24 04:10 file1
+-rw-rw-r-- 1 ec2-user ec2-user 43 Mar 24 04:10 file3

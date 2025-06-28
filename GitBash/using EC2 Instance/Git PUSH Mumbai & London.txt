@@ -1,0 +1,634 @@
+Git PUSH Mumbai 
+
+
+Git Pull London
+
+
+------------------------------------------------------------------------------------------
+
+
+PS C:\Users\Soham\Documents\DevOps(Sem6)> cd..
+PS C:\Users\Soham\Documents> cd "C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance"
+PS C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance> ssh -i push1.pem ec2-user@3.111.57.210
+The authenticity of host '3.111.57.210 (3.111.57.210)' can't be established.
+ED25519 key fingerprint is SHA256:GUUVA2Vbe3rk7tJd/LXJGml0Pkz4bMTI7trPhRnBrP8.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.111.57.210' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-13-56 ~]$ sudo su
+[root@ip-172-31-13-56 ec2-user]# yum update -y
+Amazon Linux 2023 Kernel Livepatch repository                                                        146 kB/s |  15 kB     00:00
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-13-56 ec2-user]# yum install git -y
+Last metadata expiration check: 0:00:29 ago on Tue Apr 22 06:34:43 2025.
+Dependencies resolved.
+=====================================================================================================================================
+ Package                          Architecture           Version                                   Repository                   Size
+=====================================================================================================================================
+Installing:
+ git                              x86_64                 2.47.1-1.amzn2023.0.2                     amazonlinux                  54 k
+Installing dependencies:
+ git-core                         x86_64                 2.47.1-1.amzn2023.0.2                     amazonlinux                 4.7 M
+ git-core-doc                     noarch                 2.47.1-1.amzn2023.0.2                     amazonlinux                 2.8 M
+ perl-Error                       noarch                 1:0.17029-5.amzn2023.0.2                  amazonlinux                  41 k
+ perl-File-Find                   noarch                 1.37-477.amzn2023.0.6                     amazonlinux                  26 k
+ perl-Git                         noarch                 2.47.1-1.amzn2023.0.2                     amazonlinux                  42 k
+ perl-TermReadKey                 x86_64                 2.38-9.amzn2023.0.2                       amazonlinux                  36 k
+ perl-lib                         x86_64                 0.65-477.amzn2023.0.6                     amazonlinux                  15 k
+
+Transaction Summary
+=====================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.7 M
+Installed size: 37 M
+Downloading Packages:
+(1/8): git-2.47.1-1.amzn2023.0.2.x86_64.rpm                                                          858 kB/s |  54 kB     00:00
+(2/8): git-core-doc-2.47.1-1.amzn2023.0.2.noarch.rpm                                                  33 MB/s | 2.8 MB     00:00
+(3/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                  1.8 MB/s |  41 kB     00:00
+(4/8): perl-File-Find-1.37-477.amzn2023.0.6.noarch.rpm                                               730 kB/s |  26 kB     00:00
+(5/8): perl-Git-2.47.1-1.amzn2023.0.2.noarch.rpm                                                     1.3 MB/s |  42 kB     00:00
+(6/8): git-core-2.47.1-1.amzn2023.0.2.x86_64.rpm                                                      29 MB/s | 4.7 MB     00:00
+(7/8): perl-lib-0.65-477.amzn2023.0.6.x86_64.rpm                                                     461 kB/s |  15 kB     00:00
+(8/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                               969 kB/s |  36 kB     00:00
+-------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                 40 MB/s | 7.7 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                             1/1
+  Installing       : git-core-2.47.1-1.amzn2023.0.2.x86_64                                                                       1/8
+  Installing       : git-core-doc-2.47.1-1.amzn2023.0.2.noarch                                                                   2/8
+  Installing       : perl-lib-0.65-477.amzn2023.0.6.x86_64                                                                       3/8
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 4/8
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                 5/8
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  6/8
+  Installing       : perl-Git-2.47.1-1.amzn2023.0.2.noarch                                                                       7/8
+  Installing       : git-2.47.1-1.amzn2023.0.2.x86_64                                                                            8/8
+  Running scriptlet: git-2.47.1-1.amzn2023.0.2.x86_64                                                                            8/8
+  Verifying        : git-2.47.1-1.amzn2023.0.2.x86_64                                                                            1/8
+  Verifying        : git-core-2.47.1-1.amzn2023.0.2.x86_64                                                                       2/8
+  Verifying        : git-core-doc-2.47.1-1.amzn2023.0.2.noarch                                                                   3/8
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  4/8
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                 5/8
+  Verifying        : perl-Git-2.47.1-1.amzn2023.0.2.noarch                                                                       6/8
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 7/8
+  Verifying        : perl-lib-0.65-477.amzn2023.0.6.x86_64                                                                       8/8
+
+Installed:
+  git-2.47.1-1.amzn2023.0.2.x86_64            git-core-2.47.1-1.amzn2023.0.2.x86_64       git-core-doc-2.47.1-1.amzn2023.0.2.noarch
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch  perl-File-Find-1.37-477.amzn2023.0.6.noarch perl-Git-2.47.1-1.amzn2023.0.2.noarch
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64 perl-lib-0.65-477.amzn2023.0.6.x86_64
+
+Complete!
+[root@ip-172-31-13-56 ec2-user]# which git
+/usr/bin/git
+[root@ip-172-31-13-56 ec2-user]# git --version
+git version 2.47.1
+[root@ip-172-31-13-56 ec2-user]# git config --global user.name "soham"
+[root@ip-172-31-13-56 ec2-user]# git config --global user.email "sohamdmali2004@gmail.com"
+[root@ip-172-31-13-56 ec2-user]# git config --list
+user.name=soham
+user.email=sohamdmali2004@gmail.com
+[root@ip-172-31-13-56 ec2-user]# ls
+[root@ip-172-31-13-56 ec2-user]# which git
+/usr/bin/git
+[root@ip-172-31-13-56 ec2-user]# mkdit mumbaigit
+bash: mkdit: command not found
+[root@ip-172-31-13-56 ec2-user]# mkdir mumbaigit
+[root@ip-172-31-13-56 ec2-user]# ls
+mumbaigit
+[root@ip-172-31-13-56 ec2-user]# cd mumbaigit
+[root@ip-172-31-13-56 mumbaigit]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/ec2-user/mumbaigit/.git/
+[root@ip-172-31-13-56 mumbaigit]# cat mum1
+cat: mum1: No such file or directory
+[root@ip-172-31-13-56 mumbaigit]# cat > mum1
+Manish Sabnis
+[root@ip-172-31-13-56 mumbaigit]# cat mum1
+Manish Sabnis
+[root@ip-172-31-13-56 mumbaigit]# ls
+mum1
+[root@ip-172-31-13-56 mumbaigit]# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mum1
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-13-56 mumbaigit]# git add .
+[root@ip-172-31-13-56 mumbaigit]# git commit
+Aborting commit due to empty commit message.
+[root@ip-172-31-13-56 mumbaigit]# git commit -m "Added Manish Sabnis"
+[master (root-commit) ce0941b] Added Manish Sabnis
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mum1
+[root@ip-172-31-13-56 mumbaigit]# cd..
+bash: cd..: command not found
+[root@ip-172-31-13-56 mumbaigit]# sudo su
+[root@ip-172-31-13-56 mumbaigit]# yum update -y
+Last metadata expiration check: 3:19:08 ago on Tue Apr 22 06:34:43 2025.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-13-56 mumbaigit]# yum install git -y
+Last metadata expiration check: 3:19:19 ago on Tue Apr 22 06:34:43 2025.
+Package git-2.47.1-1.amzn2023.0.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-13-56 mumbaigit]# which git
+/usr/bin/git
+[root@ip-172-31-13-56 mumbaigit]# git --version
+git version 2.47.1
+[root@ip-172-31-13-56 mumbaigit]# git config --global user.name "sohamdmali"
+[root@ip-172-31-13-56 mumbaigit]# git config --global user.email "sohamdmali2004@gmail.com"
+[root@ip-172-31-13-56 mumbaigit]# git config list
+user.name=sohamdmali
+user.email=sohamdmali2004@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/sohamdmali0939/Devops
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+[root@ip-172-31-13-56 mumbaigit]# ls
+mum1
+[root@ip-172-31-13-56 mumbaigit]# which git
+/usr/bin/git
+[root@ip-172-31-13-56 mumbaigit]# mkdir mumbaigit
+[root@ip-172-31-13-56 mumbaigit]# ls
+mum1  mumbaigit
+[root@ip-172-31-13-56 mumbaigit]# rm mumbaigit
+rm: cannot remove 'mumbaigit': Is a directory
+[root@ip-172-31-13-56 mumbaigit]# remove mumbaigit
+bash: remove: command not found
+[root@ip-172-31-13-56 mumbaigit]# ls -1
+mum1
+mumbaigit
+[root@ip-172-31-13-56 mumbaigit]# rm mumbaigit
+rm: cannot remove 'mumbaigit': Is a directory
+[root@ip-172-31-13-56 mumbaigit]# rm -r mumbaigit
+rm: remove directory 'mumbaigit'? yes
+[root@ip-172-31-13-56 mumbaigit]# ls
+mum1
+[root@ip-172-31-13-56 mumbaigit]# ls -1
+mum1
+[root@ip-172-31-13-56 mumbaigit]# git init
+Reinitialized existing Git repository in /home/ec2-user/mumbaigit/.git/
+[root@ip-172-31-13-56 mumbaigit]# cat mum1
+Manish Sabnis
+[root@ip-172-31-13-56 mumbaigit]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-13-56 mumbaigit]# git add .
+[root@ip-172-31-13-56 mumbaigit]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-13-56 mumbaigit]# git commit -m "My first commit from mumbai"
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-13-56 mumbaigit]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-13-56 mumbaigit]# git log
+commit ce0941bae1f1c7aa94ffb9b7d3aecefbf604957c (HEAD -> master)
+Author: soham <sohamdmali2004@gmail.com>
+Date:   Tue Apr 22 06:42:11 2025 +0000
+
+    Added Manish Sabnis
+[root@ip-172-31-13-56 mumbaigit]# git show ce0941b
+commit ce0941bae1f1c7aa94ffb9b7d3aecefbf604957c (HEAD -> master)
+Author: soham <sohamdmali2004@gmail.com>
+Date:   Tue Apr 22 06:42:11 2025 +0000
+
+    Added Manish Sabnis
+
+diff --git a/mum1 b/mum1
+new file mode 100644
+index 0000000..82d4bc1
+--- /dev/null
++++ b/mum1
+@@ -0,0 +1 @@
++Manish Sabnis
+[root@ip-172-31-13-56 mumbaigit]# git remote add origin https://github.com/sohamdmali0939/Devops.git
+error: remote origin already exists.
+[root@ip-172-31-13-56 mumbaigit]# ls ~/.ssh/
+authorized_keys  id_rsa  id_rsa.pub  known_hosts  known_hosts.old
+[root@ip-172-31-13-56 mumbaigit]# ]# ls ~/.ssh/*.pub
+bash: ]#: command not found
+[root@ip-172-31-13-56 mumbaigit]# mkdir -p ~/.ssh
+[root@ip-172-31-13-56 mumbaigit]# ls ~/.ssh/*.pub
+/root/.ssh/id_rsa.pub
+[root@ip-172-31-13-56 mumbaigit]# ssh-keygen -t rsa -b 4096 -C "sohamdmali2004@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:cocYRdgvXNcEtx6UCCWWhp9AzxCRUkqS/M/WByMwhg4 sohamdmali2004@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|   ..o.*O=++o=+. |
+|  E +o*o==+.ooo. |
+|   o oo= *oo  o  |
+|    . .o+.*  . . |
+|      ooS+.o  .  |
+|       o+.. .    |
+|       .   .     |
+|                 |
+|                 |
++----[SHA256]-----+
+[root@ip-172-31-13-56 mumbaigit]# ls ~/.ssh/
+authorized_keys  id_rsa  id_rsa.pub  known_hosts  known_hosts.old
+[root@ip-172-31-13-56 mumbaigit]# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3wWfu8raGmfp7AYh6csfD9HKYl/9y35zWnzUWA4nIhJcrv8etWx6KzrBCkk3vYwCC3Uz0AKvDY21udU0hmeFKJHOfLfxNge5RniXnpQ+R6mU3ZbQXkr8QfUsKZT06pWH9SGZJeEvFdQXz6HJR+dPjL3tPCrEWU+vS8V3EdSLRPiDDYzoQCNFSHWcloUfaoIJl9yA7uiSRjiR5CWNxQvDTkNfF1IaTvwL9TgUhQutDlutB2K/p5Uvdxv0X47haRJYp6mLGJpa1KpNKPLbNVf7vndHicrfLdlAFpdpkC0BqCUQywehAG0HQJanRiIE3pgGWANuaYMzbHkaxzkwHVW+7seR+aoeHnEuOUhp0DZ8HAbHWubNwQNfxjCKLrJzqf4D5Jzrx3rVbOOSCIMenS8wONL9EZNiUCZzj42eNH7O64n0b6Eq8k0LpVo2NkRZsWb7G1Y0yJBObaZf8nOcOJPTZO624+/BFOk1H11JwQC6YszgKzBqMO178I5tIef/O0BlDESMKgCEFIWx2WFQlCNhSY/MOi01G1cuInXFSJbusNeo5IEz9Y36n+VbXrg+VWCEyhe0NlQNkCsqKmwhAqOo45qVzpK2JvjaaFfoUZFo4W64SdyvkrKO/PAMzTuS6SIKC0yG7kmKqOFEJFqRm7i1THiezJ71+P8IYlIkH4gIldw== sohamdmali2004@gmail.com
+
+
+##############We needed to add the Above ssh code in GitHub to match the pair to get authenticate successfully.
+
+
+[root@ip-172-31-13-56 mumbaigit]# ssh -T git@github.com
+git@github.com: Permission denied (publickey).
+[root@ip-172-31-13-56 mumbaigit]# ssh -T git@github.com
+Hi sohamdmali0939! You've successfully authenticated, but GitHub does not provide shell access.
+[root@ip-172-31-13-56 mumbaigit]# git remote set-url origin git@github.com:sohamdmali0939/Devops.git
+[root@ip-172-31-13-56 mumbaigit]# git branch
+* master
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali0939/Devops.git (fetch)
+origin  git@github.com:sohamdmali0939/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# ssh -T git@github.com
+Hi sohamdmali0939! You've successfully authenticated, but GitHub does not provide shell access.
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali0939/Devops.git (fetch)
+origin  git@github.com:sohamdmali0939/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# git remote set-url origin git@github.com:sohamdmali/Devops.git
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali/Devops.git (fetch)
+origin  git@github.com:sohamdmali/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# git push origin master
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[root@ip-172-31-13-56 mumbaigit]# ssh -T git@github.com
+Hi sohamdmali0939! You've successfully authenticated, but GitHub does not provide shell access.
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali/Devops.git (fetch)
+origin  git@github.com:sohamdmali/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# git config --global user.name "sohamdmali0939"
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali/Devops.git (fetch)
+origin  git@github.com:sohamdmali/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]#  git remote set-url origin git@github.com:sohamdmali0939/Devops.git
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali0939/Devops.git (fetch)
+origin  git@github.com:sohamdmali0939/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# ssh -T git@github.com
+Hi sohamdmali0939! You've successfully authenticated, but GitHub does not provide shell access.
+[root@ip-172-31-13-56 mumbaigit]# git remote set-url origin git@github.com:sohamdmali0939/Devops.git
+[root@ip-172-31-13-56 mumbaigit]# git remote -v
+origin  git@github.com:sohamdmali0939/Devops.git (fetch)
+origin  git@github.com:sohamdmali0939/Devops.git (push)
+[root@ip-172-31-13-56 mumbaigit]# git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 223 bytes | 223.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/sohamdmali0939/Devops/pull/new/master
+remote:
+To github.com:sohamdmali0939/Devops.git
+ * [new branch]      master -> master
+[root@ip-172-31-13-56 mumbaigit]#
+
+
+
+
+
+SO NOW HERE WE HAVE SUCCESSFULLY PUSHED ON TO GITHUB FROM "Push Instance from Mumbai Location"
+
+
+
+Now Next Step is to Pull from London Location.
+
+
+
+
+GIT PULL London 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Soham> cd "C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance"
+PS C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance> ssh -i pull1.pem ec2-user@3.10.206.222
+The authenticity of host '3.10.206.222 (3.10.206.222)' can't be established.
+ED25519 key fingerprint is SHA256:OqdVBMd3vbALEQu9+F5FJhcMz7P0ycebXOoe7mmMhXw.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.10.206.222' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-46-73 ~]$ client_loop: send disconnect: Connection reset
+PS C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance>
+PS C:\Users\Soham\Documents\DevOps(Sem6)\GitBash\using EC2 Instance> ssh -i pull1.pem ec2-user@3.10.206.222
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Tue Apr 22 06:33:59 2025 from 103.139.157.226
+[ec2-user@ip-172-31-46-73 ~]$ git --version
+-bash: git: command not found
+[ec2-user@ip-172-31-46-73 ~]$ sudo su
+[root@ip-172-31-46-73 ec2-user]# yum update -y
+Amazon Linux 2023 Kernel Livepatch repository                                                        155 kB/s |  15 kB     00:00
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-46-73 ec2-user]# yum install git -y
+Last metadata expiration check: 0:00:15 ago on Tue Apr 22 10:30:45 2025.
+Dependencies resolved.
+=====================================================================================================================================
+ Package                          Architecture           Version                                   Repository                   Size
+=====================================================================================================================================
+Installing:
+ git                              x86_64                 2.47.1-1.amzn2023.0.2                     amazonlinux                  54 k
+Installing dependencies:
+ git-core                         x86_64                 2.47.1-1.amzn2023.0.2                     amazonlinux                 4.7 M
+ git-core-doc                     noarch                 2.47.1-1.amzn2023.0.2                     amazonlinux                 2.8 M
+ perl-Error                       noarch                 1:0.17029-5.amzn2023.0.2                  amazonlinux                  41 k
+ perl-File-Find                   noarch                 1.37-477.amzn2023.0.6                     amazonlinux                  26 k
+ perl-Git                         noarch                 2.47.1-1.amzn2023.0.2                     amazonlinux                  42 k
+ perl-TermReadKey                 x86_64                 2.38-9.amzn2023.0.2                       amazonlinux                  36 k
+ perl-lib                         x86_64                 0.65-477.amzn2023.0.6                     amazonlinux                  15 k
+
+Transaction Summary
+=====================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.7 M
+Installed size: 37 M
+Downloading Packages:
+(1/8): git-2.47.1-1.amzn2023.0.2.x86_64.rpm                                                          1.0 MB/s |  54 kB     00:00
+(2/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                  2.1 MB/s |  41 kB     00:00
+(3/8): perl-File-Find-1.37-477.amzn2023.0.6.noarch.rpm                                               793 kB/s |  26 kB     00:00
+(4/8): git-core-2.47.1-1.amzn2023.0.2.x86_64.rpm                                                      28 MB/s | 4.7 MB     00:00
+(5/8): perl-Git-2.47.1-1.amzn2023.0.2.noarch.rpm                                                     553 kB/s |  42 kB     00:00
+(6/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                               1.3 MB/s |  36 kB     00:00
+(7/8): git-core-doc-2.47.1-1.amzn2023.0.2.noarch.rpm                                                  11 MB/s | 2.8 MB     00:00
+(8/8): perl-lib-0.65-477.amzn2023.0.6.x86_64.rpm                                                     285 kB/s |  15 kB     00:00
+-------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                 27 MB/s | 7.7 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                             1/1
+  Installing       : git-core-2.47.1-1.amzn2023.0.2.x86_64                                                                       1/8
+  Installing       : git-core-doc-2.47.1-1.amzn2023.0.2.noarch                                                                   2/8
+  Installing       : perl-lib-0.65-477.amzn2023.0.6.x86_64                                                                       3/8
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 4/8
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                 5/8
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  6/8
+  Installing       : perl-Git-2.47.1-1.amzn2023.0.2.noarch                                                                       7/8
+  Installing       : git-2.47.1-1.amzn2023.0.2.x86_64                                                                            8/8
+  Running scriptlet: git-2.47.1-1.amzn2023.0.2.x86_64                                                                            8/8
+  Verifying        : git-2.47.1-1.amzn2023.0.2.x86_64                                                                            1/8
+  Verifying        : git-core-2.47.1-1.amzn2023.0.2.x86_64                                                                       2/8
+  Verifying        : git-core-doc-2.47.1-1.amzn2023.0.2.noarch                                                                   3/8
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  4/8
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                 5/8
+  Verifying        : perl-Git-2.47.1-1.amzn2023.0.2.noarch                                                                       6/8
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 7/8
+  Verifying        : perl-lib-0.65-477.amzn2023.0.6.x86_64                                                                       8/8
+
+Installed:
+  git-2.47.1-1.amzn2023.0.2.x86_64            git-core-2.47.1-1.amzn2023.0.2.x86_64       git-core-doc-2.47.1-1.amzn2023.0.2.noarch
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch  perl-File-Find-1.37-477.amzn2023.0.6.noarch perl-Git-2.47.1-1.amzn2023.0.2.noarch
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64 perl-lib-0.65-477.amzn2023.0.6.x86_64
+
+Complete!
+[root@ip-172-31-46-73 ec2-user]# which git
+/usr/bin/git
+[root@ip-172-31-46-73 ec2-user]# git --version
+git version 2.47.1
+[root@ip-172-31-46-73 ec2-user]# git config --global user.name "sohamdmali0939"
+[root@ip-172-31-46-73 ec2-user]# git config --global user.email "sohamdmali2004@gmail.com"
+[root@ip-172-31-46-73 ec2-user]# git config --list
+user.name=sohamdmali0939
+user.email=sohamdmali2004@gmail.com
+[root@ip-172-31-46-73 ec2-user]# ls
+[root@ip-172-31-46-73 ec2-user]# which git
+/usr/bin/git
+[root@ip-172-31-46-73 ec2-user]# mkdir londongit
+[root@ip-172-31-46-73 ec2-user]# ls
+londongit
+[root@ip-172-31-46-73 ec2-user]# cd londongit
+[root@ip-172-31-46-73 londongit]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/ec2-user/londongit/.git/
+[root@ip-172-31-46-73 londongit]# cat > lon1
+My first commit from london
+
+^C
+[root@ip-172-31-46-73 londongit]# ls
+lon1
+[root@ip-172-31-46-73 londongit]# cat lon1
+My first commit from london
+
+[root@ip-172-31-46-73 londongit]# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        lon1
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-46-73 londongit]# git add .
+[root@ip-172-31-46-73 londongit]# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   lon1
+
+[root@ip-172-31-46-73 londongit]# git commit -m "My first commit from London"
+[master (root-commit) 67b3c94] My first commit from London
+ 1 file changed, 2 insertions(+)
+ create mode 100644 lon1
+[root@ip-172-31-46-73 londongit]# cat lon1
+My first commit from london
+
+[root@ip-172-31-46-73 londongit]# ls ~/.ssh
+authorized_keys
+[root@ip-172-31-46-73 londongit]# mkdir -p ~/.ssh
+[root@ip-172-31-46-73 londongit]# ls ~/.ssh/*.pub
+ls: cannot access '/root/.ssh/*.pub': No such file or directory
+[root@ip-172-31-46-73 londongit]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-46-73 londongit]# git log
+commit 67b3c94edcd9b578ee8407ca7065cb48ac62faf1 (HEAD -> master)
+Author: sohamdmali0939 <sohamdmali2004@gmail.com>
+Date:   Tue Apr 22 10:35:39 2025 +0000
+
+    My first commit from London
+[root@ip-172-31-46-73 londongit]# git show 67b3c94
+commit 67b3c94edcd9b578ee8407ca7065cb48ac62faf1 (HEAD -> master)
+Author: sohamdmali0939 <sohamdmali2004@gmail.com>
+Date:   Tue Apr 22 10:35:39 2025 +0000
+
+    My first commit from London
+
+diff --git a/lon1 b/lon1
+new file mode 100644
+index 0000000..ee977c4
+--- /dev/null
++++ b/lon1
+@@ -0,0 +1,2 @@
++My first commit from london
++
+[root@ip-172-31-46-73 londongit]# git remote add origin https://github.com/sohamdmali0939/Devops.git
+[root@ip-172-31-46-73 londongit]# ls ~/.ssh/
+authorized_keys
+
+
+[root@ip-172-31-46-73 londongit]# ssh-keygen -t rsa -b 4096 -C "sohamdmali2004@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:ykWokLuhIgmJA/ZMcCpQW73jk/yIqJ93VZm0y0mj4/0 sohamdmali2004@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|.o....           |
+|. ++  ..  .      |
+|oo+.  .... +     |
+|=.+o .o.  B      |
+|= oo.o oS= +     |
+|.+ o .=o+ +      |
+|= .. .o* o       |
+|o ..o o o .      |
+|.oo. .     .E    |
++----[SHA256]-----+
+[root@ip-172-31-46-73 londongit]# ls ~/.ssh/
+authorized_keys  id_rsa  id_rsa.pub
+[root@ip-172-31-46-73 londongit]# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxztcvE5xrzzmaKzun+vHiM5Y1hlp1aGxpvz6jkWo6eXgqaR/aggseB+HMhc421NfyISmtQUvchmM40I0ew6PGt8S6NDDFw0VLDMfrpVkyz/KJWA8BwxmDqOW+7SXeRYFzUfFpq/7DJr9+iwojsTGTOyUxgTh2PLvhftWo/prC9X33GujXmo++ne3XtSnGaQDhGyi3ym9jxiKF2FWV5EedW2i2klKxx9dnyeoaVieLW9/ig6A6hbjZ5gXBE7CJTeHeHnGpMp4GlvE1SFW9H+YTk1vNEsB+kYhrhNFuPZQm6b5j/283niqUWGMO/Nemutw20CgSQ4PsWf98m0hfxG75stM0UAIybZ/sP1mNGiUB5lKIJMN1l1pXEsxKSvvg8+JC1V6gSECwnPRUuwYP8P3/qpZivtL1E3DD46oSyC/QN5tBb2WsG07f7mkTFNi8pOy0rK/47SGP3sw28keT9CGRmfKaIgQ+jnYCztRrb4Fpy0Nqkc5ELqpjupKi0Wa5D3vCZ4o3izL2tLFUfUJvL3J4Zia9DqEx81yFAHRQTfL4QwCgnuxrpxH2+DUEdqv/PqwGvnN+h+VmfrIZckAOMELyeMZnhDY/AVdlvaBz+b9Td62sHarrWIzqY7hWLCYgXdSG9+gYeRF+vxYYvX6V3kQNwF+Im7TTlPdzQK5uxnTmZw== sohamdmali2004@gmail.com
+[root@ip-172-31-46-73 londongit]# ssh -T git@github.com
+The authenticity of host 'github.com (20.26.156.215)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi sohamdmali0939! You've successfully authenticated, but GitHub does not provide shell access.
+[root@ip-172-31-46-73 londongit]# git clone git@github.com:sohamdmali0939/Devops.git
+Cloning into 'Devops'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), done.
+[root@ip-172-31-46-73 londongit]# cd Devops
+[root@ip-172-31-46-73 Devops]# git pull origin master
+From github.com:sohamdmali0939/Devops
+ * branch            master     -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+
+[root@ip-172-31-46-73 Devops]# git pull origin main
+From github.com:sohamdmali0939/Devops
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+[root@ip-172-31-46-73 Devops]# ls
+hello.txt  mum1  repo1
+[root@ip-172-31-46-73 Devops]# cat mum1
+Manish Sabnis
+[root@ip-172-31-46-73 Devops]#
+
+
+
+
+

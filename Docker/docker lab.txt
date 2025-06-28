@@ -1,0 +1,438 @@
+DEVOPS LAB on GITBASH 
+Dt. 02-05-25 
+
+
+
+
+Soham@DESKTOP-MAVHBII MINGW64 ~
+$ cd "C:\Users\Soham\Documents\DevOps(Sem6)\Docker"
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Documents/DevOps(Sem6)/Docker
+$ ssh -i docker1.pem ec2-user@3.7.253.255
+The authenticity of host '3.7.253.255 (3.7.253.255)' can't be established.
+ED25519 key fingerprint is SHA256:02eysxMQNZD2Kony93Oe0YptB6OXnq3F3oZRgz/hQy0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.7.253.255' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-11-26 ~]$ sudo yum install docker -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                                               157 kB/s |  16 kB     00:00
+Dependencies resolved.
+============================================================================================================================================================================
+ Package                                         Architecture                    Version                                         Repository                            Size
+============================================================================================================================================================================
+Installing:
+ docker                                          x86_64                          25.0.8-1.amzn2023.0.3                           amazonlinux                           45 M
+Installing dependencies:
+ container-selinux                               noarch                          3:2.233.0-1.amzn2023                            amazonlinux                           55 k
+ containerd                                      x86_64                          1.7.27-1.amzn2023.0.2                           amazonlinux                           37 M
+ iptables-libs                                   x86_64                          1.8.8-3.amzn2023.0.2                            amazonlinux                          401 k
+ iptables-nft                                    x86_64                          1.8.8-3.amzn2023.0.2                            amazonlinux                          183 k
+ libcgroup                                       x86_64                          3.0-1.amzn2023.0.1                              amazonlinux                           75 k
+ libnetfilter_conntrack                          x86_64                          1.0.8-2.amzn2023.0.2                            amazonlinux                           58 k
+ libnfnetlink                                    x86_64                          1.0.1-19.amzn2023.0.2                           amazonlinux                           30 k
+ libnftnl                                        x86_64                          1.2.2-2.amzn2023.0.2                            amazonlinux                           84 k
+ pigz                                            x86_64                          2.5-1.amzn2023.0.3                              amazonlinux                           83 k
+ runc                                            x86_64                          1.2.4-1.amzn2023.0.1                            amazonlinux                          3.4 M
+
+Transaction Summary
+============================================================================================================================================================================
+Install  11 Packages
+
+Total download size: 86 M
+Installed size: 324 M
+Downloading Packages:
+(1/11): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                                     1.0 MB/s |  55 kB     00:00
+(2/11): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                        15 MB/s | 401 kB     00:00
+(3/11): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                        5.6 MB/s | 183 kB     00:00
+(4/11): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                                             2.2 MB/s |  75 kB     00:00
+(5/11): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                                              2.4 MB/s |  58 kB     00:00
+(6/11): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                                       1.7 MB/s |  30 kB     00:00
+(7/11): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                                            2.3 MB/s |  84 kB     00:00
+(8/11): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                                  668 kB/s |  83 kB     00:00
+(9/11): runc-1.2.4-1.amzn2023.0.1.x86_64.rpm                                                                                                 21 MB/s | 3.4 MB     00:00
+(10/11): containerd-1.7.27-1.amzn2023.0.2.x86_64.rpm                                                                                         41 MB/s |  37 MB     00:00
+(11/11): docker-25.0.8-1.amzn2023.0.3.x86_64.rpm                                                                                             38 MB/s |  45 MB     00:01
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                        72 MB/s |  86 MB     00:01
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                    1/1
+  Installing       : runc-1.2.4-1.amzn2023.0.1.x86_64                                                                                                                  1/11
+  Installing       : containerd-1.7.27-1.amzn2023.0.2.x86_64                                                                                                           2/11
+  Running scriptlet: containerd-1.7.27-1.amzn2023.0.2.x86_64                                                                                                           2/11
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                    3/11
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                              4/11
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                         5/11
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                6/11
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                         7/11
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                          8/11
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                          8/11
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                               9/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                                    10/11
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                                    10/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                                    10/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.3.x86_64                                                                                                              11/11
+  Installing       : docker-25.0.8-1.amzn2023.0.3.x86_64                                                                                                              11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.3.x86_64                                                                                                              11/11
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                                    11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.3.x86_64                                                                                                              11/11
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                                     1/11
+  Verifying        : containerd-1.7.27-1.amzn2023.0.2.x86_64                                                                                                           2/11
+  Verifying        : docker-25.0.8-1.amzn2023.0.3.x86_64                                                                                                               3/11
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                         4/11
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                          5/11
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                               6/11
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                                7/11
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                         8/11
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                              9/11
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                                   10/11
+  Verifying        : runc-1.2.4-1.amzn2023.0.1.x86_64                                                                                                                 11/11
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch                   containerd-1.7.27-1.amzn2023.0.2.x86_64                docker-25.0.8-1.amzn2023.0.3.x86_64
+  iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                       iptables-nft-1.8.8-3.amzn2023.0.2.x86_64               libcgroup-3.0-1.amzn2023.0.1.x86_64
+  libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64              libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64              libnftnl-1.2.2-2.amzn2023.0.2.x86_64
+  pigz-2.5-1.amzn2023.0.3.x86_64                                  runc-1.2.4-1.amzn2023.0.1.x86_64
+
+Complete!
+[ec2-user@ip-172-31-11-26 ~]$ sudo systemctl start docker
+[ec2-user@ip-172-31-11-26 ~]$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[ec2-user@ip-172-31-11-26 ~]$ sudo usermod -a -G docker jenkins
+usermod: user 'jenkins' does not exist
+[ec2-user@ip-172-31-11-26 ~]$ chmod 777 /var/run/docker.sock
+chmod: changing permissions of '/var/run/docker.sock': Operation not permitted
+[ec2-user@ip-172-31-11-26 ~]$ sudo chmod 777 /var/run/docker.sock
+[ec2-user@ip-172-31-11-26 ~]$ docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+2726e237d1a3: Pull complete
+Digest: sha256:1e622c5f073b4f6bfad6632f2616c7f59ef256e96fe78bf6a595d1dc4376ac02
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+[ec2-user@ip-172-31-11-26 ~]$ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    602eb6fb314b   3 weeks ago   78.1MB
+[ec2-user@ip-172-31-11-26 ~]$ sudo docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   17556     [OK]
+ubuntu/squid                     Squid is a caching proxy for the Web. Long-t…   113
+ubuntu/nginx                     Nginx, a high-performance reverse proxy & we…   129
+ubuntu/cortex                    Cortex provides storage for Prometheus. Long…   4
+ubuntu/kafka                     Apache Kafka, a distributed event streaming …   53
+ubuntu/prometheus                Prometheus is a systems and service monitori…   71
+ubuntu/bind9                     BIND 9 is a very flexible, full-featured DNS…   104
+ubuntu/apache2                   Apache, a secure & extensible open-source HT…   90
+ubuntu/zookeeper                 ZooKeeper maintains configuration informatio…   13
+ubuntu/mysql                     MySQL open source fast, stable, multi-thread…   67
+ubuntu/postgres                  PostgreSQL is an open source object-relation…   41
+ubuntu/redis                     Redis, an open source key-value store. Long-…   23
+ubuntu/dotnet-aspnet             Chiselled Ubuntu runtime image for ASP.NET a…   26
+ubuntu/jre                       Distroless Java runtime based on Ubuntu. Lon…   20
+ubuntu/grafana                   Grafana, a feature rich metrics dashboard & …   12
+ubuntu/python                    A chiselled Ubuntu rock with the Python runt…   23
+ubuntu/dotnet-deps               Chiselled Ubuntu for self-contained .NET & A…   16
+ubuntu/cassandra                 Cassandra, an open source NoSQL distributed …   2
+ubuntu/dotnet-runtime            Chiselled Ubuntu runtime image for .NET apps…   20
+ubuntu/memcached                 Memcached, in-memory keyvalue store for smal…   5
+ubuntu/prometheus-alertmanager   Alertmanager handles client alerts from Prom…   10
+ubuntu/mlflow                    MLFlow: for managing the machine learning li…   5
+ubuntu/telegraf                  Telegraf collects, processes, aggregates & w…   4
+ubuntu/loki                      Grafana Loki, a log aggregation system like …   2
+ubuntu/chiselled-jre             [MOVED TO ubuntu/jre] Chiselled JRE: distrol…   3
+[ec2-user@ip-172-31-11-26 ~]$ service docker status
+Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; preset: disabled)
+     Active: active (running) since Fri 2025-05-02 05:57:25 UTC; 6min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+    Process: 27901 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+    Process: 27902 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+   Main PID: 27903 (dockerd)
+      Tasks: 11
+     Memory: 122.1M
+        CPU: 2.099s
+     CGroup: /system.slice/docker.service
+             └─27903 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=32768:65536
+
+May 02 05:57:24 ip-172-31-11-26.ap-south-1.compute.internal systemd[1]: Starting docker.service - Docker Application Container Engine...
+May 02 05:57:24 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:24.758604454Z" level=info msg="Starting up"
+May 02 05:57:24 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:24.900362943Z" level=info msg="Loading containers: start."
+May 02 05:57:25 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:25.273830299Z" level=info msg="Loading containers: done."
+May 02 05:57:25 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:25.297136883Z" level=info msg="Docker daemon" commit=71907ca containerd->
+May 02 05:57:25 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:25.297351408Z" level=info msg="Daemon has completed initialization"
+May 02 05:57:25 ip-172-31-11-26.ap-south-1.compute.internal dockerd[27903]: time="2025-05-02T05:57:25.351357190Z" level=info msg="API listen on /run/docker.sock"
+May 02 05:57:25 ip-172-31-11-26.ap-south-1.compute.internal systemd[1]: Started docker.service - Docker Application Container Engine.
+ ESCOC
+
+d)
+
+
+
+SS)
+ted, status=0/SUCCESS)
+
+
+
+
+
+.sock --default-ulimit nofile=32768:65536
+
+r.service - Docker Application Container Engine...
+-05-02T05:57:24.758604454Z" level=info msg="Starting up"
+-05-02T05:57:24.900362943Z" level=info msg="Loading containers: start."
+-05-02T05:57:25.273830299Z" level=info msg="Loading containers: done."
+-05-02T05:57:25.297136883Z" level=info msg="Docker daemon" commit=71907ca containerd-snapshotter=false storage-driver=overlay2 version=25.0.8
+-05-02T05:57:25.297351408Z" level=info msg="Daemon has completed initialization"
+-05-02T05:57:25.351357190Z" level=info msg="API listen on /run/docker.sock"
+.service - Docker Application Container Engine.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+napshotter=false storage-driver=overlay2 version=25.0.8
+
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ^X
+
+logout
+Connection to 3.7.253.255 closed.
+
+Soham@DESKTOP-MAVHBII MINGW64 ~/Documents/DevOps(Sem6)/Docker
+$ ssh -i docker1.pem ec2-user@3.7.253.255
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Fri May  2 05:51:35 2025 from 103.139.157.226
+[ec2-user@ip-172-31-11-26 ~]$ docker run -it --name soham123 ubuntu /bin/bash
+root@472421661ac7:/# docker start soham123
+bash: docker: command not found
+root@472421661ac7:/# exit
+exit
+[ec2-user@ip-172-31-11-26 ~]$ docker start soham123
+soham123
+[ec2-user@ip-172-31-11-26 ~]$ docker attach soham123
+root@472421661ac7:/# exit
+exit
+[ec2-user@ip-172-31-11-26 ~]$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS                      PORTS     NAMES
+472421661ac7   ubuntu    "/bin/bash"   About a minute ago   Exited (0) 10 seconds ago             soham123
+[ec2-user@ip-172-31-11-26 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-11-26 ~]$ docker stop soham123
+soham123
+[ec2-user@ip-172-31-11-26 ~]$ docker rm soham123
+soham123
+[ec2-user@ip-172-31-11-26 ~]$ docker rmi soham123
+Error response from daemon: No such image: soham123:latest
+[ec2-user@ip-172-31-11-26 ~]$ docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    602eb6fb314b   3 weeks ago   78.1MB
+[ec2-user@ip-172-31-11-26 ~]$ docker rmi^C
+[ec2-user@ip-172-31-11-26 ~]$ docker rmi 602eb6fb314b
+Untagged: ubuntu:latest
+Untagged: ubuntu@sha256:1e622c5f073b4f6bfad6632f2616c7f59ef256e96fe78bf6a595d1dc4376ac02
+Deleted: sha256:602eb6fb314b5fafad376a32ab55194e535e533dec6552f82b70d7ac0e554b1c
+Deleted: sha256:3abdd8a5e7a8909e1509f1d36dcc8b85a0f95c68a69e6d86c6e9e3c1059d44b3
+[ec2-user@ip-172-31-11-26 ~]$
